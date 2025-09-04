@@ -73,8 +73,16 @@ export USE_GLES=1
 export GL_CFLAGS=""
 export GL_LDLIBS="-lEGL -lGLESv2"
 
-bitness=64 source scripts/mupen64plussa.sh```
+bitness=64 source scripts/mupen64plussa.sh
+```
+## Overview
+A standard build using ArkOS scripts.
 
+To prevent the screen from shifting to the left when using the rice plugin on devices with 16:9 screens, apply the ArkOS mupen64plus-video-rice-patch-aspect-ratio-hack.patch.
+Also apply mupen64plus-ui-console-patch-pif-fix.patch (I don't know exactly what it is)
 
+I modified the existing ext-mupen64plus.sh to adjust the screen ratio.
+I made some changes to mupen64plus.cfg, but there may be better settings.
+Since the settings of mupen64plus.cfg are changed and used in the ext-mupen64plus.sh, it is currently run with one mupen64plus.cfg.
 
-
+To prevent a black screen when running glidemk2, I imported and used fb_disable_transparency, included in Crossmix.
